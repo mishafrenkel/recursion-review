@@ -63,14 +63,14 @@ var stringifyJSON = function(obj) {
       for (let key in obj) {
         let tempKey = '"' + key + '"';
         let tempValue = stringifyJSON(obj[key]);
-          if(typeof tempValue === 'undefined' || typeof tempValue === 'function') {
-            return '{}';
-          } 
+        if(typeof tempValue === 'undefined' || typeof tempValue === 'function') {
+          return '{}';
+        } 
         let temp = tempKey + ':' + tempValue;
         objectArray.push(temp);
       }
 
-     return `{${objectArray.join(',')}}`;
+      return `{${objectArray.join(',')}}`;
     }
   } 
 
